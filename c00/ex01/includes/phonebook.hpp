@@ -6,10 +6,11 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 11:09:12 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/19 11:09:13 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/19 11:19:42 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PHONEBOOK_H
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -38,3 +39,5 @@ class Contact
 	//	Contact(void);	
 	//	~Contact(void);
 };
+
+#endif

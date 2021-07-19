@@ -6,7 +6,7 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/16 07:49:56 by maraurel          #+#    #+#              #
-#    Updated: 2021/07/16 08:23:01 by maraurel         ###   ########.fr        #
+#    Updated: 2021/07/19 12:50:00 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,14 @@ SRC = megaphone.cpp
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	@$(CC) $(FLAGS) $(SRC) -o $(NAME)
+OBJ = $(SRC:.cpp=.o)
+
+$(NAME):
+	@$(CC) $(FLAGS) -c $(SRC)
+	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJ)
 
 fclean:	clean
 	@$(RM) $(NAME)
