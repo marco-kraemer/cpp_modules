@@ -6,38 +6,11 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:30:58 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/19 10:52:46 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/19 11:09:25 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iomanip>
-#include <string>
-#include <sstream>
-
-class Contact
-{
-	private:
-		std::string first_name;
-		std::string last_name;
-		std::string nickname;
-		std::string phone_number;
-		std::string darkest_secret;
-	public:
-		std::string	get_first_name();
-		std::string	get_last_name();
-		std::string	get_nickname();
-		std::string	get_phone_number();
-		std::string	get_darkest_secret();
-		void	set_first_name(std::string name, Contact *contact);
-		void	set_last_name(std::string name, Contact *contact);
-		void	set_nickname(std::string nickname, Contact *contact);
-		void	set_phone_number(std::string number, Contact *contact);
-		void	set_darkest_secret(std::string secret, Contact *contact);
-
-	//	Contact(void);	
-	//	~Contact(void);
-};
+#include "../includes/phonebook.hpp"
 
 std::string	Contact::get_first_name()
 {return (first_name);}
@@ -204,7 +177,7 @@ int	main(void)
 	while (1)
 	{
 		std::cout << "Type a command (ADD, SEARCH, EXIT): ";
-		std::cin >> command;
+		std::getline(std::cin >> std::ws, command);
 		if (command == "EXIT")
 			exit (0);
 		else if (command == "ADD")
