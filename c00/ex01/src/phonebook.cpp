@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:30:58 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/19 10:23:19 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/19 10:52:46 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,29 +109,89 @@ void	add_contact(Contact *contact)
 	i++;
 }
 
+void	get_index_and_search(Contact contact[8])
+{
+	std::string	info;
+	int		index;
+	int		i;
+
+	std::cout << "Enter contact index: ";
+	std::getline(std::cin >> std::ws, info);
+	i = 0;
+	while (info[i])
+	{
+		if (isdigit(info[i]) == 0)
+		{
+			std::cout << "Incorrect index" << std::endl;
+			return ;
+		}
+		i++;
+	}
+	index = stoi(info);
+	if (index < 1 || index > 8)
+	{
+		std::cout << "Incorrect index" << std::endl;
+		return ;
+	}
+	index--;
+	std::cout << "First name: " << contact[index].get_first_name() << std::endl;
+	std::cout << "Last name: " << contact[index].get_last_name() << std::endl;
+	std::cout << "Nickname: " << contact[index].get_nickname() << std::endl;
+	std::cout << "Phone number " << contact[index].get_phone_number() << std::endl;
+	std::cout << "Darkest secret: " << contact[index].get_darkest_secret() << std::endl;
+}
+
 void	search_contact(Contact contact[8])
 {
 	std::string	info;
 	int		i;
 
 	i = 0;
-	std::cout << std::setw(10);
-	std::cout << i << "|";
-	info = contact[i].get_first_name();
-	if (info.length() >= 10)
+
+	while (1)
 	{
-		info.insert (9, ".");
-		info.resize (10);
+		info = contact[i].get_first_name();
+		if (info.length() == 0)
+			break ;
+
+		// INDEX
+		std::cout << std::setw(10);
+		std::cout << (i + 1) << "|";
+		
+		// FIRST NAME
+		info = contact[i].get_first_name();
+		if (info.length() > 10)
+		{
+			info.insert (9, ".");
+			info.resize (10);
+		}
+		std::cout << std::setw(10);
+		std::cout << info << "|";
+		
+		// LAST NAME
+		info = contact[i].get_last_name();
+		if (info.length() > 10)
+		{
+			info.insert (9, ".");
+			info.resize (10);
+		}
+		std::cout << std::setw(10);
+		std::cout << info << "|";
+		
+		//NICKNAME
+		info = contact[i].get_nickname();
+		if (info.length() > 10)
+		{
+			info.insert (9, ".");
+			info.resize (10);
+		}
+		std::cout << std::setw(10);
+		std::cout << info << "|";
+		std::cout << std::endl;
+
+		i++;
 	}
-	std::cout << std::setw(10);
-	std::cout << info << "|";
-	info = contact[i].get_last_name();
-	std::cout << std::setw(10);
-	std::cout << info << "|";
-	info = contact[i].get_nickname();
-	std::cout << std::setw(10);
-	std::cout << info << "|";
-	std::cout << std::endl;
+	get_index_and_search(contact);
 }
 
 int	main(void)
