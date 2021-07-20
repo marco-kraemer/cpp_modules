@@ -6,20 +6,24 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 10:41:29 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/20 10:44:09 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/20 11:02:05 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 #include <iostream>
+#include "Weapon.hpp"
 
 class HumanB
 {
 private:
-	std::string	Weapon;
-	std::string	Name;
+	Weapon		*weapon;
+	std::string	name;
 public:
 	void	attack(std::string Weapon, std::string Name);
-	HumanB(/* args */);
+	HumanB(std::string name);
 	~HumanB();
 };
 
+#endif

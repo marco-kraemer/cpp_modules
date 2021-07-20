@@ -6,7 +6,7 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/20 10:04:44 by maraurel          #+#    #+#              #
-#    Updated: 2021/07/20 10:46:36 by maraurel         ###   ########.fr        #
+#    Updated: 2021/07/20 11:03:49 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ CC = clang++
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS = main.cpp \
-	humanA.cpp \
-	humanB.cpp \
+	HumanA.cpp \
+	HumanB.cpp \
 	Weapon.cpp
 
 OBJS = $(SRCS:.cpp=.o)
@@ -29,10 +29,10 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME) : $(OBJS)
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
 
-$(OBJS) : $(SRCS)
-	@$(CC) $(CFLAGS) -o $(OBJS) -c $(SRCS)
+%.o : %.cpp
+	$(CC) $(CFLAGS) -o $@ -c $^
 
 clean:
 	@$(RM) -r $(OBJS)

@@ -6,14 +6,15 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 10:43:51 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/20 10:44:08 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/20 10:57:36 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(/* args */)
+HumanB::HumanB(std::string name)
 {
+	this->name = name;
 }
 
 HumanB::~HumanB()

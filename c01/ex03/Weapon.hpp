@@ -6,12 +6,12 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 10:35:40 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/20 10:39:01 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/20 11:01:31 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WEAPON_HPP
-# define ZOMBIE_HPP
+# define WEAPON_HPP
 #include <iostream>
 
 class Weapon
@@ -19,9 +19,9 @@ class Weapon
 private:
 	std::string type;
 public:
-	Weapon();
+	Weapon(std::string type);
 	~Weapon();
-	std::string	getType(std::string type);
+	std::string	getType(void);
 	void		setType(std::string type);
 };
 
