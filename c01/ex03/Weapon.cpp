@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 10:35:17 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/20 11:00:55 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/20 13:57:48 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,3 +20,6 @@ void	Weapon::setType(std::string type)
 
 std::string	Weapon::getType(void)
 {return (type);}
+
+Weapon::~Weapon()
+{}

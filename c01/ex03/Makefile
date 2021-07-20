@@ -6,12 +6,12 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/20 10:04:44 by maraurel          #+#    #+#              #
-#    Updated: 2021/07/20 11:03:49 by maraurel         ###   ########.fr        #
+#    Updated: 2021/07/20 14:11:14 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = weapon
+NAME = attack
 
 CC = clang++
 
@@ -29,10 +29,10 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^
+	@$(CC) $(CFLAGS) -o $@ $^
 
 %.o : %.cpp
-	$(CC) $(CFLAGS) -o $@ -c $^
+	@$(CC) $(CFLAGS) -o $@ -c $^
 
 clean:
 	@$(RM) -r $(OBJS)
