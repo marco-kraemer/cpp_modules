@@ -6,12 +6,13 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 19:12:03 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/24 18:18:11 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/24 19:12:42 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
+#include	<iostream>
+#include	<fstream>
+#include	<string>
 
 int main(int argc, char *argv[])
 {
@@ -21,10 +22,29 @@ int main(int argc, char *argv[])
 		std::cout << "Wrong number of arguments" << std::endl;
 		return (1);
 	}
-	std::fstream	fs;
-	std::string	filename = argv[0];
-	fs.open (argv[0], std::fstream::in | std::fstream::out | std::fstream::app);
-	fs << "oi\n";
-	fs.close();
-	return (0);
+	// filestream variable file
+	std::fstream file;
+	std::string word, filename;
+	
+	// filename of the file
+	filename = argv[1];
+	
+	// opening file
+	file.open(filename.c_str());
+
+	// Open filename.REPLACE
+	std::ofstream	replace;
+	std::string	toReplace = ".replace";
+	std::string	newFileName = argv[1] + toReplace;
+	replace.open (newFileName, std::ios::out | std::ios::app | std::ios::binary);
+
+	// extracting words from the file
+	while (file >> word)
+	{
+		// displaying content
+		if (word != argv[2])
+			replace << word << " ";
+		else
+			replace << argv[3] << " ";
+	}
 }
