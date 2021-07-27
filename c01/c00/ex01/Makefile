@@ -5,41 +5,37 @@
 #                                                     +:+ +:+         +:+      #
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/07/20 10:04:44 by maraurel          #+#    #+#              #
-#    Updated: 2021/07/20 10:16:58 by maraurel         ###   ########.fr        #
+#    Created: 2021/06/01 11:22:06 by maraurel          #+#    #+#              #
+#    Updated: 2021/07/16 14:45:23 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = phonebook
 
-NAME = hi
+SRC_PATH = ./src
+
+OBJ_PATH = ./obj
+
+SRC = $(notdir $(wildcard ./src/*.cpp))
+
+OBJ = $(addprefix $(OBJ_PATH)/, $(SRC:.cpp=.o))
 
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 
-SRCS = main.cpp
+all: $(NAME) $(OBJ)
 
-OBJS = $(SRCS:.cpp=.o)
+$(NAME): $(OBJ)
+	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
-RM = rm -f
-
-all: $(NAME)
-
-$(NAME) : $(OBJS)
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
-
-$(OBJS) : $(SRCS)
-	@$(CC) $(CFLAGS) -o $(OBJS) -c $(SRCS)
-
-clean:
-	@$(RM) -r $(OBJS)
+$(OBJ_PATH)/%.o:	$(SRC_PATH)/%.cpp
+	@$(CC) -g $(FLAGS) -c $< -o $@
 
 fclean: clean
 	@$(RM) $(NAME)
 
-re: fclean all
+clean:
+	@$(RM) $(OBJ_PATH)/*.o
 
-git: 
-	git add .
-	git commit -m "update"
-	git push origin main
+re: fclean all

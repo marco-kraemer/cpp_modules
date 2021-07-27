@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 19:12:03 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/24 19:12:42 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/27 17:01:13 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	if (argc != 4)
 	{
 		std::cout << "Wrong number of arguments" << std::endl;
-		return (1);
+		exit (1);
 	}
 	// filestream variable file
 	std::fstream file;
@@ -28,10 +28,14 @@ int main(int argc, char *argv[])
 	
 	// filename of the file
 	filename = argv[1];
-	
+
 	// opening file
 	file.open(filename.c_str());
-
+	if (!file)
+	{
+		std::cout << "Invalid file name" << std::endl;
+		exit (1);
+	}
 	// Open filename.REPLACE
 	std::ofstream	replace;
 	std::string	toReplace = ".replace";
@@ -47,4 +51,5 @@ int main(int argc, char *argv[])
 		else
 			replace << argv[3] << " ";
 	}
+	return (0);
 }

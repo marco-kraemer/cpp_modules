@@ -5,41 +5,31 @@
 #                                                     +:+ +:+         +:+      #
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/07/20 10:04:44 by maraurel          #+#    #+#              #
-#    Updated: 2021/07/20 10:16:58 by maraurel         ###   ########.fr        #
+#    Created: 2021/07/16 07:49:56 by maraurel          #+#    #+#              #
+#    Updated: 2021/07/19 12:50:00 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-NAME = hi
+NAME = megaphone
 
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 
-SRCS = main.cpp
-
-OBJS = $(SRCS:.cpp=.o)
-
-RM = rm -f
+SRC = megaphone.cpp
 
 all: $(NAME)
 
-$(NAME) : $(OBJS)
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+OBJ = $(SRC:.cpp=.o)
 
-$(OBJS) : $(SRCS)
-	@$(CC) $(CFLAGS) -o $(OBJS) -c $(SRCS)
+$(NAME):
+	@$(CC) $(FLAGS) -c $(SRC)
+	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	@$(RM) -r $(OBJS)
+	@$(RM) $(OBJ)
 
-fclean: clean
+fclean:	clean
 	@$(RM) $(NAME)
 
 re: fclean all
-
-git: 
-	git add .
-	git commit -m "update"
-	git push origin main
