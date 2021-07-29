@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 17:20:05 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/27 18:02:06 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/29 10:03:48 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,18 @@ void	Karen::error( void )
 	std::cout << "This is unacceptable, I want to speak to the manager now." << std::endl;
 }
 
-void	Karen::complain( std::string level )
+void	Karen::complain(std::string level)
 {
-	if (level == "ERROR")
-	{	
-		Karen::debug();
+	std::string	commands[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void		(Karen::* function[4])(void) = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
+
+	for (int i = 0 ; i < 4 ; i++)
+	{
+		if (level.compare(commands[i]) == 0)
+		{
+			(this->*function[i])();
+			return ;
+		}
 	}
+	return ;
 }
