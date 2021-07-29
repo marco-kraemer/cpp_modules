@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 14:25:28 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/29 15:08:01 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/29 16:07:27 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,12 @@ private:
 	int			FixedValue;
 	static const int	FractionalBits = 8;
 public:
-	Fixed();
-	Fixed(const Fixed &fix);
-	~Fixed();
+	Fixed(); // Constructor
+	Fixed(const Fixed &fix); // Copy constructor;  ClassName (const ClassName &old_obj)
+	~Fixed(); // Destructor
+	Fixed&	operator = (const Fixed &fix); // Assigment operator; ClassName& operator = (const ClassName &old_obj)
+	int	getRawBits( void ) const;
+	void	setRawBits( int const raw );
 };
 
 #endif

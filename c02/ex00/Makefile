@@ -6,12 +6,12 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/20 10:04:44 by maraurel          #+#    #+#              #
-#    Updated: 2021/07/29 14:25:10 by maraurel         ###   ########.fr        #
+#    Updated: 2021/07/29 16:14:43 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = numbers
+NAME = ./a.out
 
 CC = clang++
 

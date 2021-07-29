@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 14:25:23 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/29 15:55:00 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/29 16:20:35 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Fixed::Fixed(void)
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 	FixedValue = 0;	
 }
 
@@ -29,3 +29,21 @@ Fixed::Fixed(const Fixed &fix)
 	*this = fix;
 }
 
+Fixed&	Fixed::operator = (const Fixed &fix)
+{
+	std::cout << "Assignation operator called" << std::endl;
+	this->FixedValue = fix.getRawBits();
+	return (*this);
+}
+
+int	Fixed::getRawBits(void) const
+{
+	std::cout << "getRawBits member function called" << std::endl;
+	return (FixedValue);
+}
+
+void	Fixed::setRawBits(int raw)
+{
+	std::cout << "setRawBits member function called" << std::endl;
+	FixedValue = raw;
+}
