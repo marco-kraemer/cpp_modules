@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 09:41:47 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/30 11:33:09 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/30 11:46:33 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ float	Fixed::toFloat( void ) const
 {
 	float	FloatingPoint;
 
-	FloatingPoint = FixedValue;
+	FloatingPoint = FixedValue >> FractionalBits;
 	return (FloatingPoint);
 }
 
