@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 09:41:47 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/30 11:46:33 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/30 14:53:38 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Fixed::Fixed(const int num)
 Fixed::Fixed(const float num)
 {
 	std::cout << "Float constructor called" << std::endl;
-	FixedValue = num + FractionalBits;
+	FixedValue = (int)roundf((num * (1 << this->FractionalBits)));
 }
 
 Fixed::Fixed(void)
@@ -50,30 +50,22 @@ Fixed&	Fixed::operator = (const Fixed &fix)
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (FixedValue);
 }
 
 void	Fixed::setRawBits(int raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
 	FixedValue = raw;
 }
 
 float	Fixed::toInt( void ) const
 {
-	float	FloatingPoint;
-
-	FloatingPoint = FixedValue;
-	return (FloatingPoint);
+	return (FixedValue >> FractionalBits);
 }
 
 float	Fixed::toFloat( void ) const
 {
-	float	FloatingPoint;
-
-	FloatingPoint = FixedValue >> FractionalBits;
-	return (FloatingPoint);
+	return ((float)FixedValue / (1 << FractionalBits));
 }
 
 std::ostream& operator<<(std::ostream& stream, const Fixed& num)
