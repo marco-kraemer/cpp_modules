@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 09:41:47 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/31 15:16:50 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/31 16:02:14 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,3 +116,21 @@ Fixed	Fixed::operator*(const Fixed &fix)
 	tmp.setRawBits(num);
 	return (tmp);
 }
+
+bool	Fixed::operator>(const Fixed &fix)
+{return (this->FixedValue > fix.FixedValue);}
+
+bool	Fixed::operator<(const Fixed &fix)
+{return (this->FixedValue < fix.FixedValue);}
+
+bool	Fixed::operator>=(const Fixed &fix)
+{return (this->FixedValue >= fix.FixedValue);}
+
+bool	Fixed::operator<=(const Fixed &fix)
+{return (this->FixedValue <= fix.FixedValue);}
+
+bool	Fixed::operator==(const Fixed &fix)
+{return (this->FixedValue == fix.FixedValue);}
+
+bool	Fixed::operator!=(const Fixed &fix)
+{return (this->FixedValue != fix.FixedValue);}
