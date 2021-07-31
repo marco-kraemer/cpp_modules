@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 09:41:55 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/31 14:24:16 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/31 14:53:44 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ public:
 	// Operators overloading
 	Fixed&	operator++();
 	Fixed	operator++(int);
+	Fixed&	operator--();
+	Fixed	operator--(int);
+	Fixed	operator*(const Fixed &fix);
 };
 
 std::ostream& operator<<(std::ostream& stream, const Fixed& other);

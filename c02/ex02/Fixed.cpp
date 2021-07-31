@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 09:41:47 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/31 14:29:41 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/31 15:16:50 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Fixed::Fixed(const Fixed &fix)
 	*this = fix;
 }
 
-Fixed&	Fixed::operator = (const Fixed &fix)
+Fixed&	Fixed::operator=(const Fixed &fix)
 {
 //	std::cout << "Assignation operator called" << std::endl;
 	this->FixedValue = fix.getRawBits();
@@ -76,7 +76,7 @@ std::ostream& operator<<(std::ostream& stream, const Fixed& num)
 
 Fixed&	Fixed::operator++()
 {
-	++FixedValue;
+	FixedValue++;
 	return (*this);
 }
 
@@ -90,3 +90,29 @@ Fixed	Fixed::operator++(int)
 	return (tmp);
 }
 
+Fixed&	Fixed::operator--()
+{
+	FixedValue--;
+	return (*this);
+}
+
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	tmp;
+
+	tmp = *this;
+	this->FixedValue--;
+	return (tmp);
+}
+
+Fixed	Fixed::operator*(const Fixed &fix)
+{
+	Fixed	tmp;
+	float	num;
+
+	num = this->FixedValue * fix.FixedValue;
+	num = num / (1 << this->FractionalBits);
+	tmp.setRawBits(num);
+	return (tmp);
+}
