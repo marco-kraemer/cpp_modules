@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 09:41:47 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/31 16:02:14 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/31 17:14:24 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,37 @@ Fixed	Fixed::operator*(const Fixed &fix)
 	return (tmp);
 }
 
+Fixed	Fixed::operator+(const Fixed &fix)
+{
+	Fixed	tmp;
+	float	num;
+
+	num = this->FixedValue + fix.FixedValue;
+	tmp.setRawBits(num);
+	return (tmp);
+}
+
+Fixed	Fixed::operator-(const Fixed &fix)
+{
+	Fixed	tmp;
+	float	num;
+
+	num = this->FixedValue - fix.FixedValue;
+	tmp.setRawBits(num);
+	return (tmp);
+}
+
+Fixed	Fixed::operator/(const Fixed &fix)
+{
+	Fixed	tmp;
+	float	num;
+
+	num = this->FixedValue / fix.FixedValue;
+	num = num * (1 << this->FractionalBits);
+	tmp.setRawBits(num);
+	return (tmp);
+}
+
 bool	Fixed::operator>(const Fixed &fix)
 {return (this->FixedValue > fix.FixedValue);}
 
@@ -134,3 +165,31 @@ bool	Fixed::operator==(const Fixed &fix)
 
 bool	Fixed::operator!=(const Fixed &fix)
 {return (this->FixedValue != fix.FixedValue);}
+
+Fixed&	Fixed::min(Fixed &a, Fixed&b)
+{
+	if (a.FixedValue < b.FixedValue)
+		return (a);
+	return (b);
+}
+
+const Fixed&	Fixed::min(const Fixed &a, const Fixed&b)
+{
+	if (a.FixedValue < b.FixedValue)
+		return (a);
+	return (b);
+}
+
+Fixed&	Fixed::max(Fixed &a, Fixed&b)
+{
+	if (a.FixedValue > b.FixedValue)
+		return (a);
+	return (b);
+}
+
+const Fixed&	Fixed::max(const Fixed &a, const Fixed&b)
+{
+	if (a.FixedValue > b.FixedValue)
+		return (a);
+	return (b);
+}

@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 09:41:55 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/31 16:02:29 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/07/31 17:01:13 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ public:
 
 	// Arithmetic operators
 	Fixed	operator*(const Fixed &fix);
+	Fixed	operator-(const Fixed &fix);
+	Fixed	operator+(const Fixed &fix);
+	Fixed	operator/(const Fixed &fix);
 
 	// Comparison operators
 	bool	operator>(const Fixed &fix);
@@ -49,6 +52,12 @@ public:
 	bool	operator<=(const Fixed &fix);
 	bool	operator==(const Fixed &fix);
 	bool	operator!=(const Fixed &fix);
+
+	// Overloading functions
+	static Fixed&		min(Fixed &a, Fixed&b);
+	static const Fixed&	min(const Fixed& a, const Fixed&b);
+	static Fixed&		max(Fixed &a, Fixed&b);
+	static const Fixed&	max(const Fixed& a, const Fixed&b);
 };
 
 std::ostream& operator<<(std::ostream& stream, const Fixed& other);
