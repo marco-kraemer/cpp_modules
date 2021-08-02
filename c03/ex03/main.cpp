@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 09:44:33 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/02 11:49:31 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/02 12:35:23 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,16 @@ int	main(void)
 
 	std::cout << "\n\n----------DIAMONDTRAP EXERCISE----------------\n\n" << std::endl;
 	DiamondTrap	user5("user5");
+	std::cout << "DiamondTrap " << user5.getName() << " has " << user5.getHitPoints() << " hit points!" << std::endl;
+	std::cout << "DiamondTrap " << user5.getName() << " has " << user5.getEnergyPoints() << " energy points!" << std::endl;
+	std::cout << "DiamondTrap " << user5.getName() << " has " << user5.getAttackDamage() << " of attack damage!" << std::endl;
+	user4.attack(user5.getName());
+	user5.takeDamage(user4.getAttackDamage());
+	std::cout << "DiamondTrap " << user5.getName() << " has " << user5.getHitPoints() << " hit points!" << std::endl;
+	user5.beRepaired(5);
+	std::cout << "DiamondTrap " << user5.getName() << " has " << user5.getHitPoints() << " hit points!" << std::endl;
+	user5.highFivesGuys();
+	user5.guardGate();
+	user5.whoAmI();
 	std::cout << "\n\n----------------------------------------------\n\n" << std::endl;
 }

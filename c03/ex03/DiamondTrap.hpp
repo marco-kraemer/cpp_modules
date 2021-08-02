@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 11:29:38 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/02 11:57:17 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/02 12:33:37 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		virtual void		attack(std::string const & target);
 		virtual void		takeDamage(unsigned int amount);
 		virtual void		beRepaired(unsigned int amount);
+		void 			whoAmI();
 };
 
 #endif
