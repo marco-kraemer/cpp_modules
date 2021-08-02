@@ -6,11 +6,11 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/30 09:42:09 by maraurel          #+#    #+#              #
-#    Updated: 2021/08/02 10:40:24 by maraurel         ###   ########.fr        #
+#    Updated: 2021/08/02 11:32:48 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = FlagTrap
+NAME = FragTrap
 
 CC = clang++
 
@@ -19,7 +19,7 @@ CFLAGS = -Wall -Wextra -Werror
 SRCS = main.cpp \
 	ClapTrap.cpp \
 	ScavTrap.cpp \
-	FlagTrap.cpp
+	FragTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
