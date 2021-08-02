@@ -6,18 +6,18 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/30 09:42:09 by maraurel          #+#    #+#              #
-#    Updated: 2021/07/31 16:58:10 by maraurel         ###   ########.fr        #
+#    Updated: 2021/08/02 08:50:45 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ./a.out
+NAME = ClapTrap
 
 CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS = main.cpp \
-	Fixed.cpp
+	ClapTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
