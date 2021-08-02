@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 09:21:17 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/02 09:41:38 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/02 09:45:45 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ class ScavTrap : public ClapTrap
 {
 	public:
 		ScavTrap();
+		~ScavTrap();
 		ScavTrap(const ScavTrap &scav);
 		ScavTrap(std::string Name);
 		ScavTrap& operator=(const ScavTrap &scav);

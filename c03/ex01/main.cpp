@@ -5,15 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/02 08:31:59 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/02 09:12:59 by maraurel         ###   ########.fr       */
+/*   Created: 2021/08/02 09:44:33 by maraurel          #+#    #+#             */
+/*   Updated: 2021/08/02 09:46:51 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void)
 {
+	std::cout << "\n\n----------ClapTrap EXERCISE----------------\n\n" << std::endl;
 	ClapTrap	user1("user1");
 	ClapTrap	user2("user2");
 
@@ -23,4 +24,7 @@ int	main(void)
 	user2.attack("user1");
 	user1.takeDamage(10);
 	user1.beRepaired(1);
+
+	std::cout << "\n\n----------SCAVTRAP EXERCISE----------------\n\n" << std::endl;
+	ScavTrap	user3("user3");
 }
