@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 09:44:33 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/02 09:46:51 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/02 10:15:57 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,14 @@ int	main(void)
 
 	std::cout << "\n\n----------SCAVTRAP EXERCISE----------------\n\n" << std::endl;
 	ScavTrap	user3("user3");
+	std::cout << "ScavTrap " << "user3" << " has " << user3.getHitPoints() << " hit points!" << std::endl;
+	std::cout << "ScavTrap " << "user3" << " has " << user3.getEnergyPoints() << " energy points!" << std::endl;
+	std::cout << "ScavTrap " << "user3" << " has " << user3.getAttackDamage() << " of attack damage!" << std::endl;
+	user1.attack(user3.getName());
+	user3.takeDamage(user1.getAttackDamage());
+	user3.beRepaired(25);
+	std::cout << "ScavTrap " << "user3" << " has " << user3.getHitPoints() << " hit points!" << std::endl;
+	user3.guardGate();
+
+	std::cout << "\n\n----------------------------------------------\n\n" << std::endl;
 }

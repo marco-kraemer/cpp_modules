@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 08:31:26 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/02 09:21:58 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/02 10:13:03 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,38 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "ClapTrap " << this->Name << " received " << amount << " hit points!" << std::endl;
 	this->Hitpoints += amount;
+}
+
+std::string	ClapTrap::getName(void) const
+{
+	return (this->Name);
+}
+
+int	ClapTrap::getHitPoints(void) const
+{
+	return (this->Hitpoints);
+}
+
+int	ClapTrap::getEnergyPoints(void) const
+{
+	return (this->EnergyPoints);
+}
+
+int	ClapTrap::getAttackDamage(void) const
+{
+	return (this->AttackDamage);
+}
+
+void		ClapTrap::setHitPoints(int const value)
+{
+	Hitpoints = value;
+}
+void		ClapTrap::setEnergyPoints(int const value)
+{
+	EnergyPoints = value;
+}
+
+void		ClapTrap::setAttackDamage(int const value)
+{
+	AttackDamage = value;
 }

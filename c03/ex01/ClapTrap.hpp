@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 08:29:21 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/02 09:26:13 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/02 10:12:56 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,18 @@ class ClapTrap
 		ClapTrap(const ClapTrap &clap);
 		ClapTrap& operator=(const ClapTrap &clap);
 		
-		void		attack(std::string const & target);
-		void		takeDamage(unsigned int amount);
-		void		beRepaired(unsigned int amount);
+		virtual void		attack(std::string const & target);
+		virtual void		takeDamage(unsigned int amount);
+		virtual void		beRepaired(unsigned int amount);
+
+		std::string	getName(void) const;
+		int		getHitPoints(void) const;
+		int		getEnergyPoints(void) const;
+		int		getAttackDamage(void) const;
+
+		void		setHitPoints(int const value);
+		void		setEnergyPoints(int const value);
+		void		setAttackDamage(int const value);
 };
 
 #endif
