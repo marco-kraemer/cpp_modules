@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 10:35:50 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/02 10:39:14 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/02 10:44:52 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ FlagTrap::FlagTrap()
 	std::cout << "Default FlagTrap constructor called" << std::endl;
 	Name = "";
 	Hitpoints = 100;
-	EnergyPoints = 50;
-	AttackDamage = 20;
+	EnergyPoints = 100;
+	AttackDamage = 30;
 }
 
 FlagTrap::FlagTrap(std::string Name)
@@ -26,8 +26,8 @@ FlagTrap::FlagTrap(std::string Name)
 	std::cout << "Name FlagTrap constructor called" << std::endl;
 	this->Name = Name;
 	Hitpoints = 100;
-	EnergyPoints = 50;
-	AttackDamage = 20;
+	EnergyPoints = 100;
+	AttackDamage = 30;
 }
 
 FlagTrap::~FlagTrap()
@@ -67,4 +67,9 @@ void	FlagTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "FlagTrap " << this->Name << " received " << amount << " hit points!" << std::endl;
 	this->Hitpoints += amount;
+}
+
+void	FlagTrap::highFivesGuys(void)
+{
+	std::cout << Name << ": High Five!!!" << std::endl;
 }

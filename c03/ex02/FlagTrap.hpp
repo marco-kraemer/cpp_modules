@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 10:35:53 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/02 10:40:46 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/02 10:42:28 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class FlagTrap : public ClapTrap
 		virtual void		takeDamage(unsigned int amount);
 		virtual void		beRepaired(unsigned int amount);
 
+		void highFivesGuys(void);
 };
 
 #endif
