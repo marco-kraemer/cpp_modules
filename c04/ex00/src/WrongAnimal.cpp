@@ -1,44 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/03 08:28:59 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/03 09:08:16 by maraurel         ###   ########.fr       */
+/*   Created: 2021/08/03 09:15:48 by maraurel          #+#    #+#             */
+/*   Updated: 2021/08/03 09:21:43 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Animal.hpp"
+#include "../includes/WrongAnimal.hpp"
 
-Animal::Animal()
+WrongAnimal::WrongAnimal()
 {
-	this->type = "Some animal";
+	this->type = "Some WrongAnimal";
 	std::cout << this->type << " was raised" << std::endl;
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
 	std::cout << this->type << " is gone" << std::endl;
 }
 
-Animal& Animal::operator=(const Animal &p)
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal &p)
 {
 	this->type = p.getType();
 	std::cout << p.getType() << "aaa" << std::endl;
 	return (*this);
 }
 
-Animal::Animal(const Animal &p)
+WrongAnimal::WrongAnimal(const WrongAnimal &p)
 {
 	*this = p;
 }
 
-std::string const & Animal::getType(void) const
+std::string const & WrongAnimal::getType(void) const
 {return (this->type);}
 
-void		Animal::makeSound(void) const
+void		WrongAnimal::makeSound(void) const
 {
-	std::cout << "Animal!" << std::endl;
+	std::cout << "Wrong Sound!" << std::endl;
 }

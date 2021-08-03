@@ -13,10 +13,15 @@
 #include "../includes/Cat.hpp"
 
 Cat::Cat()
-{}
+{
+	this->type = "Cat";
+	std::cout << "Some animal became a " << this->type << std::endl;
+}
 
 Cat::~Cat()
-{}
+{
+	std::cout << this->type << " is gone" << std::endl;
+}
 
 Cat& Cat::operator=(const Cat &p)
 {
