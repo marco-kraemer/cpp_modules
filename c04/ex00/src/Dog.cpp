@@ -12,15 +12,11 @@
 
 #include "../includes/Dog.hpp"
 
-Dog::Dog()
-{
-	this->type = "Dog";
-	std::cout << "Some animal became a " << this->type << std::endl;
-}
+Dog::Dog() : Animal::Animal("Dog")
+{}
 
 Dog::~Dog()
 {
-	std::cout << this->type << " is gone" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog &p)

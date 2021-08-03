@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 08:28:59 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/03 09:08:16 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/03 09:48:56 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,13 @@
 Animal::Animal()
 {
 	this->type = "Some animal";
-	std::cout << this->type << " was raised" << std::endl;
+	std::cout << this->type << " was raised!" << std::endl;
+}
+
+Animal::Animal(std::string type)
+{
+	this->type = type;
+	std::cout << type << " was raised!" << std::endl;
 }
 
 Animal::~Animal()

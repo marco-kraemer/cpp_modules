@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 09:15:48 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/03 09:21:43 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/03 09:52:42 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,13 @@
 WrongAnimal::WrongAnimal()
 {
 	this->type = "Some WrongAnimal";
-	std::cout << this->type << " was raised" << std::endl;
+	std::cout << this->type << " was raised!" << std::endl;
+}
+
+WrongAnimal::WrongAnimal(std::string type)
+{
+	this->type = type;
+	std::cout << this->type << " was raised!" << std::endl;
 }
 
 WrongAnimal::~WrongAnimal()
