@@ -15,6 +15,7 @@
 Cat::Cat() : Animal::Animal("Cat")
 {
 	this->brain = new Brain();
+	std::cout << this->type << " got a brain!" << std::endl;
 }
 
 Cat::~Cat()

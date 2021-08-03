@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 08:34:28 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/03 09:58:10 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/03 12:52:44 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat : virtual public Animal
+class Cat : public Animal
 {
 	private:
 		Brain	*brain;

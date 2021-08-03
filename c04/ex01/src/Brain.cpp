@@ -1,45 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/03 08:28:59 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/03 08:39:52 by maraurel         ###   ########.fr       */
+/*   Created: 2021/08/03 12:23:51 by maraurel          #+#    #+#             */
+/*   Updated: 2021/08/03 12:35:57 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Dog.hpp"
+#include "../includes/Brain.hpp"
 
-Dog::Dog() : Animal::Animal("Dog")
+Brain::Brain()
 {
-	this->brain = new Brain();
-	std::cout << this->type << " got a brain!" << std::endl;
 }
 
-Dog::~Dog()
+Brain::~Brain()
 {
-	delete this->brain;
 }
 
-Dog& Dog::operator=(const Dog &p)
+Brain& Brain::operator=(const Brain &p)
 {
-	Animal::operator=(p);
+	for (int i = 0; i < 100; i++)
+		ideas[i] = p.getIdea(i);
 	return (*this);
 }
 
-Dog::Dog(const Dog &p)
+Brain::Brain(const Brain &p)
 {
 	*this = p;
 }
 
-void		Dog::makeSound(void) const
+void		Brain::setIdea(std::string idea)
 {
-	std::cout << "Auuuu!" << std::endl;
+	static int	i;
+
+	ideas[i] = idea;
+	i++;
+	if (i == 100)
+		i = 0;
 }
 
-Brain*	Dog::getBrain(void) const
+std::string	Brain::getIdea(int i) const
 {
-	return (brain);
+	return (ideas[i]);
 }

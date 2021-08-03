@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 08:34:31 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/03 09:59:35 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/03 12:52:46 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Dog : virtual public Animal
+class Dog : public Animal
 {
 	private:
 		Brain	*brain;
@@ -25,6 +25,8 @@ class Dog : virtual public Animal
 		Dog(const Dog &p);
 		Dog& operator=(const Dog &p);
 		virtual void		makeSound() const;
+	
+		Brain* getBrain(void) const;
 };
 
 #endif
