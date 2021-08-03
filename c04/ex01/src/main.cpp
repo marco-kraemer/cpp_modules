@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 08:23:39 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/03 12:59:05 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/03 13:14:43 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,23 @@ int main()
 	}
 	// Set animals[1] idea
 	for (int i = 0; i < 100; i++)
-		((Dog *)animals[1])->getBrain()->setIdea("a");
+		((Dog *)animals[1])->getBrain()->setIdea("a", i);
 
 	// Create deep copy
 	Animal *CopyDog = new Dog (*(Dog *)animals[1]);
-
+	
 	// Show ideas;
+	std::cout << "\n\nShow ideas from animals[1] and CopyDog: " << std::endl;
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << "Orignal: " << ((Dog *)animals[1])->getBrain()->getIdea(i) << "   Copy:"
+		<< ((Dog *)CopyDog)->getBrain()->getIdea(i) << std::endl;
+	}
+
+	std::cout << "\n\nShow ideas after change CopyDog ideas: " << std::endl;
 	for (int i = 0; i < 100; i++)
+		((Dog *)CopyDog)->getBrain()->setIdea("b", i);
+	for (int i = 0; i < 10; i++)
 	{
 		std::cout << "Orignal: " << ((Dog *)animals[1])->getBrain()->getIdea(i) << "   Copy:"
 		<< ((Dog *)CopyDog)->getBrain()->getIdea(i) << std::endl;

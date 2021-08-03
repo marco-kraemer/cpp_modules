@@ -25,6 +25,8 @@ Dog::~Dog()
 
 Dog& Dog::operator=(const Dog &p)
 {
+	this->~Dog();
+	this->brain = new Brain(*p.getBrain());
 	Animal::operator=(p);
 	return (*this);
 }

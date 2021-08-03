@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 09:42:31 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/03 12:36:35 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/03 13:00:10 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Brain
 		Brain(const Brain &p);
 		Brain& operator=(const Brain &p);
 		
-		void		setIdea(std::string);
+		void		setIdea(std::string, int i);
 		std::string	getIdea(int i) const;
 };
 

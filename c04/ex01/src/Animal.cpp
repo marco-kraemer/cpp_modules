@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 08:28:59 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/03 12:47:14 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/03 13:05:51 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ Animal::~Animal()
 Animal& Animal::operator=(const Animal &p)
 {
 	this->type = p.getType();
-	std::cout << p.getType() << "aaa" << std::endl;
 	return (*this);
 }
 
