@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:53:27 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/04 15:02:13 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/04 15:19:54 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,20 @@ std::string	const & Bureaucrat::getName(void)const
 
 void	Bureaucrat::incrementGrade(int amount)
 {
-	if (this->grade -= amount < 0)
+	if (this->grade - amount < 0)
 		throw Bureaucrat::GradeTooHighException();
 	this->grade -= amount;
 }
 
 void	Bureaucrat::decrementGrade(int amount)
 {
-	if (this->grade += amount > 150)
+	if (this->grade + amount > 150)
 		throw Bureaucrat::GradeTooLowException();
-	this->grade -= amount;
+	this->grade += amount;
+}
+
+std::ostream& operator<<(std::ostream& stream, const Bureaucrat& p)
+{
+	stream << p.getName() << ", bureaucrat grade " << p.getGrade();
+	return stream;
 }

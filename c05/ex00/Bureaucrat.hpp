@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:45:34 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/04 15:01:58 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/04 15:11:23 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,7 @@ class Bureaucrat
 			}
 		};
 };
+
+std::ostream& operator<<(std::ostream& stream, const Bureaucrat& p);
 
 #endif
