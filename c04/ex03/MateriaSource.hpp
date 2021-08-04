@@ -1,46 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 08:32:23 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/04 09:30:38 by maraurel         ###   ########.fr       */
+/*   Created: 2021/08/04 09:15:23 by maraurel          #+#    #+#             */
+/*   Updated: 2021/08/04 09:45:04 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef	MateriaSource_HPP
+# define MateriaSource_HPP
 #include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-AMateria::AMateria()
-{}
-
-AMateria::AMateria(std::string const & type)
+class MateriaSource : public IMateriaSource
 {
-	this->type = type;
-}
+	private:
+		AMateria	*Source[4];
+	public:
+		MateriaSource();
+		~MateriaSource();
+		MateriaSource(const MateriaSource &p);
+		MateriaSource& operator=(const MateriaSource &p);
 
-AMateria::~AMateria()
-{}
+		virtual void learnMateria(AMateria*);
+		virtual AMateria* createMateria(std::string const & type);
+};
 
-AMateria::AMateria(const AMateria &p)
-{
-	*this = p;
-}
-
-AMateria& AMateria::operator=(const AMateria &p)
-{
-	this->type = p.getType();
-	return (*this);
-}
-
-std::string const & AMateria::getType() const
-{
-	return (this->type);
-}
-
-void AMateria::use(ICharacter& target)
-{
-	target.getName();
-	return ;
-}
+#endif

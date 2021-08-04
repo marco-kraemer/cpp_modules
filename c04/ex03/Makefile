@@ -6,7 +6,7 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/04 08:32:31 by maraurel          #+#    #+#              #
-#    Updated: 2021/08/04 08:36:48 by maraurel         ###   ########.fr        #
+#    Updated: 2021/08/04 10:42:54 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,14 @@ NAME = a.out
 
 CC = clang++
 
-CFLAGS = #-Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS = main.cpp \
+	Character.cpp \
+	Cure.cpp \
+	Ice.cpp \
+	AMateria.cpp \
+	MateriaSource.cpp
 
 
 OBJS = $(SRCS:.cpp=.o)

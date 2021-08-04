@@ -1,46 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 08:32:23 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/04 09:30:38 by maraurel         ###   ########.fr       */
+/*   Created: 2021/08/04 10:25:14 by maraurel          #+#    #+#             */
+/*   Updated: 2021/08/04 10:25:46 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef	CURE_HPP
+# define CURE_HPP
 #include "AMateria.hpp"
 
-AMateria::AMateria()
-{}
-
-AMateria::AMateria(std::string const & type)
+class Cure : public AMateria
 {
-	this->type = type;
-}
+	public:
+		Cure();
+		virtual ~Cure();
+		Cure(const Cure &p);
+		Cure& operator=(const Cure &p);
 
-AMateria::~AMateria()
-{}
+		virtual	AMateria *clone() const;
+		virtual	void use (ICharacter& target);
+};
 
-AMateria::AMateria(const AMateria &p)
-{
-	*this = p;
-}
-
-AMateria& AMateria::operator=(const AMateria &p)
-{
-	this->type = p.getType();
-	return (*this);
-}
-
-std::string const & AMateria::getType() const
-{
-	return (this->type);
-}
-
-void AMateria::use(ICharacter& target)
-{
-	target.getName();
-	return ;
-}
+#endif

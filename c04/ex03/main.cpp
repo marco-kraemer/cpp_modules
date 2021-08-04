@@ -6,9 +6,16 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 08:46:30 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/04 08:46:41 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/04 10:55:00 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
+#include "MateriaSource.hpp"
+#include "Character.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 int main()
 {
