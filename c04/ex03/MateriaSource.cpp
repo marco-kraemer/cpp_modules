@@ -56,7 +56,7 @@ void	MateriaSource::learnMateria(AMateria* m)
 {
 	int	i = 0;
 
-	while (Source[i])
+	while (i < 4)
 	{
 		if (Source[i] == NULL)
 			Source[i] = m;

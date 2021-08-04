@@ -64,10 +64,13 @@ void Character::equip(AMateria* m)
 {
 	int	i = 0;
 
-	while (invent[i])
+	while (i < 4)
 	{
 		if (invent[i] == NULL)
+		{
 			invent[i] = m;
+			return ;
+		}
 		i++;
 	}	
 }
@@ -81,5 +84,7 @@ void Character::unequip(int idx)
 void Character::use(int idx, ICharacter& target)
 {
 	if (idx >= 0 && idx <= 3 && invent[idx] != NULL)
+	{
 		invent[idx]->use(target);
+	}
 }

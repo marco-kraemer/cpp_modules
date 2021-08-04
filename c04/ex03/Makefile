@@ -6,15 +6,15 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/04 08:32:31 by maraurel          #+#    #+#              #
-#    Updated: 2021/08/04 10:42:54 by maraurel         ###   ########.fr        #
+#    Updated: 2021/08/04 10:59:56 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = Materia
 
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = #-Wall -Wextra -Werror
 
 SRCS = main.cpp \
 	Character.cpp \
