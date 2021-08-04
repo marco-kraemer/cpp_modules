@@ -6,13 +6,13 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 10:25:12 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/04 11:04:56 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/04 11:26:09 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria::AMateria("Cure")
+Cure::Cure() : AMateria::AMateria("cure")
 {
 }
 

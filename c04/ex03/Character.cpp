@@ -24,8 +24,7 @@ Character::~Character()
 	for (int i = 0; i < 4; i++)
 	{
 		if (invent[i] != NULL)
-			return;
-		//	delete this->invent[i];
+			delete this->invent[i];
 	}	
 }
 

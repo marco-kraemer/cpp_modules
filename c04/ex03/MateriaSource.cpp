@@ -23,8 +23,7 @@ MateriaSource::~MateriaSource()
 	for (int i = 0; i < 4; i++)
 	{
 		if (Source[i] != NULL)
-			return ;
-		//	delete Source[i];
+			delete Source[i];
 	}
 }
 
@@ -59,7 +58,10 @@ void	MateriaSource::learnMateria(AMateria* m)
 	while (i < 4)
 	{
 		if (Source[i] == NULL)
+		{
 			Source[i] = m;
+			return ;
+		}
 		i++;
 	}
 }
