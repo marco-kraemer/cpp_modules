@@ -6,7 +6,7 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/04 14:40:28 by maraurel          #+#    #+#              #
-#    Updated: 2021/08/05 12:17:20 by maraurel         ###   ########.fr        #
+#    Updated: 2021/08/05 14:13:52 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ SRCS = main.cpp \
 	Form.cpp \
 	ShrubberyCreationForm.cpp \
 	PresidentialPardonForm.cpp \
-	RobotomyRequestForm.cpp
+	RobotomyRequestForm.cpp \
+	Intern.cpp
 
 
 OBJS = $(SRCS:.cpp=.o)
