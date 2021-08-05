@@ -6,7 +6,7 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/04 14:40:28 by maraurel          #+#    #+#              #
-#    Updated: 2021/08/05 10:41:05 by maraurel         ###   ########.fr        #
+#    Updated: 2021/08/05 12:17:20 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ CFLAGS = -Wall -Wextra -Werror
 SRCS = main.cpp \
 	Bureaucrat.cpp \
 	Form.cpp \
-	ShrubberyCreationForm.cpp
+	ShrubberyCreationForm.cpp \
+	PresidentialPardonForm.cpp \
+	RobotomyRequestForm.cpp
 
 
 OBJS = $(SRCS:.cpp=.o)
