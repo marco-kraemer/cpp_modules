@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 08:40:34 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/05 10:41:28 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/05 11:22:09 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,4 @@ std::ostream& operator<<(std::ostream& stream, const Form& p)
 	stream << "Form name: " << p.getName() << ", Form sign grade: " << p.getSignGrade()
 		<< ", Form execute grade: " << p.getExecGrade() << ". Signature: " << signature;
 	return (stream);
-}
-
-void		Form::execute(Bureaucrat const & executor)
-{
-	executor.getGrade();
 }

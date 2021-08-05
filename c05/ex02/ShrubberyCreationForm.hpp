@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 10:12:47 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/05 10:45:26 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/05 11:45:54 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ class ShrubberyCreationForm : public Form
 		ShrubberyCreationForm(const ShrubberyCreationForm &p);
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm &p);
 
+		virtual void	execute(Bureaucrat const & executor) const;
 };

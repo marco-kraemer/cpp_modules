@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:53:27 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/05 09:50:20 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/05 12:08:54 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ std::string	const & Bureaucrat::getName(void)const
 
 void	Bureaucrat::incrementGrade(int amount)
 {
-	if (this->grade - amount < 0)
+	if (this->grade - amount <= 0)
 		throw Bureaucrat::GradeTooHighException();
 	this->grade -= amount;
 }
@@ -81,4 +81,18 @@ void	Bureaucrat::signForm(Form *form)
 	{
 		std::cout << this->getName() << " cannot sign " << form->getName() << " because " << e.what() << std::endl;
 	}
+}
+
+void	Bureaucrat::executeForm(Form const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->name << " executes " << form.getName() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Can't execute because " << e.what() << std::endl;
+	}
+
 }

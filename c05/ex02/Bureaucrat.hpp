@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:45:34 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/05 09:44:22 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/05 11:42:08 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class Bureaucrat
 		void	decrementGrade(int amount);
 		
 		void	signForm(Form *form);
-
+		void	executeForm(Form const & form);
 		class	GradeTooHighException : public std::exception
 		{
 			const char* what() const noexcept override

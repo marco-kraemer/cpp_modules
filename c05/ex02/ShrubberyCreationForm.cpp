@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 10:12:44 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/05 10:46:15 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/05 12:10:53 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,23 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	Form::operator=(p);
 	this->setTarget(p.getTarget());
 	return (*this);
+}
+
+void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+{
+	if (this->getSigned() == 0)
+		throw NotSignedException();
+	else if (executor.getGrade() > getExecGrade())
+		throw GradeTooLowException();
+	else
+	{
+		std::ofstream treeFile(this->getTarget() + "_shruberry");
+		treeFile << "       ###" << std::endl;
+		treeFile << "      #o###" << std::endl;
+		treeFile << "    #####o###" << std::endl;
+		treeFile << "   #o#\\#|#/###" << std::endl;
+		treeFile << "    ###\\|/#o#" << std::endl;
+		treeFile << "     # }|{  #" << std::endl;
+		treeFile << "       }|{" << std::endl;
+	}
 }

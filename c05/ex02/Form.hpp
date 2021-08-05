@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 08:40:37 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/05 10:47:01 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/05 11:57:45 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FORM_HPP
 
 #include <iostream>
+#include <fstream>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -39,7 +40,7 @@ class Form
 		int		const & getExecGrade(void)const;
 
 		void		beSigned(Bureaucrat *bureaucrat);
-		void		execute(Bureaucrat const & executor);
+		virtual void	execute(Bureaucrat const & executor) const = 0;
 
 		void		setTarget(std::string target);
 		std::string	const & getTarget(void)const;
@@ -57,6 +58,14 @@ class Form
 			const char* what() const noexcept override
 			{
 				return "Grade too low";
+			}
+		};
+
+		class	NotSignedException : public std::exception
+		{
+			const char* what() const noexcept override
+			{
+				return "form is not signed";
 			}
 		};
 };
