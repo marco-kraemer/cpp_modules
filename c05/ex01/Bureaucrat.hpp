@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:45:34 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/05 09:40:13 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/05 09:44:22 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include <string>
 #include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {

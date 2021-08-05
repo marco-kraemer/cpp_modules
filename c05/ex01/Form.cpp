@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 08:40:34 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/05 09:30:08 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/05 09:59:15 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,10 @@ int	const & Form::getExecGrade(void)const
 	return (this->execGrade);
 }
 
-std::ostream& operator<<(std::ostream& stream, const Form& p)
-{
-	stream << p.getName() << " TODO " << p.getSigned();
-	return stream;
-}
-
 void		Form::beSigned(Bureaucrat *bureaucrat)
 {
 	int grade = bureaucrat->getGrade();
-	if (grade < this->signGrade)
+	if (grade <= this->signGrade)
 	{
 		isSigned = true;
 	}
@@ -71,4 +65,17 @@ void		Form::beSigned(Bureaucrat *bureaucrat)
 	{
 		throw Form::GradeTooLowException();
 	}
+}
+
+std::ostream& operator<<(std::ostream& stream, const Form& p)
+{
+	std::string	signature;
+
+	if (p.getSigned() == 0)
+		signature = "False";
+	else
+		signature = "True";
+	stream << "Form name: " << p.getName() << ", Form sign grade: " << p.getSignGrade()
+		<< ", Form execute grade: " << p.getExecGrade() << ". Signature: " << signature;
+	return (stream);
 }

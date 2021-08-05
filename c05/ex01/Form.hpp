@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 08:40:37 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/05 09:25:13 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/05 09:55:23 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -54,5 +56,7 @@ class Form
 			}
 		};
 };
+
+std::ostream& operator<<(std::ostream& stream, const Form& p);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 14:32:16 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/04 15:20:25 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/05 10:03:31 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,22 @@ int	main(void)
 {
 	try
 	{
-		Bureaucrat one("Bureaucrat one", 100);
-		Bureaucrat two("Bureaucrat two", 20);
-		
-		std::cout << one << std::endl;
-		std::cout << two << std::endl;
+		Bureaucrat	one("Tom", 80);
+		Form		form("Test form", 10, 52);
 
-		one.decrementGrade(50);
 		std::cout << one << std::endl;
-		one.incrementGrade(80);
+		one.signForm(&form);
+		std::cout << form << std::endl;
+		std::cout << "Tom grade increase in 30" << std::endl;
+		one.incrementGrade(30);
 		std::cout << one << std::endl;
-		one.incrementGrade(80);
+		one.signForm(&form);
+		std::cout << form << std::endl;
+		std::cout << "Tom grade increase in 45" << std::endl;
+		one.incrementGrade(45);
 		std::cout << one << std::endl;
+		one.signForm(&form);
+		std::cout << form << std::endl;
 	}
 	catch(std::exception &e)
 	{
