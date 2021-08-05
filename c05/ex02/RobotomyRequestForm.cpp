@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 12:11:48 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/05 12:19:29 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/05 13:44:23 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		throw GradeTooLowException();
 	else
 	{
-		// DO SOMETHING
+		std::cout << "zzzzzzzzzzzzzzzzzzzzzzz" << std::endl;
+		srand (time(NULL));
+		if (rand() % 2 == 0)
+				std::cout << this->getTarget() << " has been robotomized successfully" << std::endl;	
+		else
+			std::cout << this->getTarget() << " has been robotomized with failure" << std::endl;
 	}
 }

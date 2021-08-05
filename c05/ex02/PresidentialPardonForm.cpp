@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 12:13:15 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/05 12:18:26 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/05 13:34:02 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,6 @@ void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 		throw GradeTooLowException();
 	else
 	{
-		// Do something
+		std::cout << this->getTarget() << " has been pardoned by Zafod Beeblebrox" << std::endl;
 	}
 }
