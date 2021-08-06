@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 08:28:57 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/06 08:58:21 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/06 09:31:27 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 int	main(int argc, char **argv)
 {
-//	std::string s = argv[1];
-	Convert	convert(argv[1]);
-
 	if (argc != 2)
 	{
 		std::cout << "Wrong number of arguments." << std::endl;
 		exit (0);
 	}
+	Convert	convert(argv[1]);
 	std::cout << convert << std::endl;
 }
