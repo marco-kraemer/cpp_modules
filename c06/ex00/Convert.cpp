@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 08:38:32 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/06 09:35:21 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/06 10:02:21 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 Convert::Convert()
 {}
 
-Convert::Convert(std::string input)
+Convert::Convert(const std::string input)
 {
 	this->input = input;
 	this->value = atof(input.c_str());
-	std::cout << input << std::endl;
 }
 
 Convert::~Convert()
@@ -63,19 +62,30 @@ int	Convert::convertInt() const
 	return (Int);
 }
 
+float	Convert::convertFloat() const
+{
+	float	Float;
+
+	Float = static_cast<float>(this->value);
+	if (isnan(this->value) || isinf(this->value))
+		throw	ImpossibleException();
+	return (Float);
+}
 
 std::ostream& operator<<(std::ostream& stream, const Convert& p)
 {
-	stream << "char: '";
+	stream << "char: ";
 	try
 	{
-		stream << p.convertChar();
+		char Char = p.convertChar();
+		stream << "'" << Char << "'";
 	}
 	catch (std::exception &e)
 	{
 		stream << e.what();
 	}
-	stream << "'" << std::endl;
+
+	stream << std::endl;
 	stream << "int: ";
 	try
 	{
@@ -85,6 +95,27 @@ std::ostream& operator<<(std::ostream& stream, const Convert& p)
 	{
 		stream << e.what();
 	}
+
 	stream << std::endl;
+	stream << "float: ";
+	try
+	{
+		stream << p.convertFloat();
+		stream << "f";
+	}
+	catch (std::exception &e)
+	{
+		stream << e.what();
+	}
 	return (stream);
+}
+
+const char* Convert::NonDisplayableException::what() const noexcept
+{
+	return "Non displayable";
+}
+
+const char* Convert::ImpossibleException::what() const noexcept
+{
+	return "Impossible";
 }

@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 08:38:34 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/06 09:31:42 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/06 10:01:36 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,30 +24,25 @@ class Convert
 		double		value;
 	public:
 		Convert();
-		Convert(std::string input);
+		Convert(const std::string input);
 		~Convert();
 		Convert(const Convert &p);
 		Convert& operator=(const Convert &p);
 
 		char	convertChar() const;
 		int	convertInt() const;
+		float	convertFloat() const;
 
 		std::string	const & getInput(void) const;
 
 		class	NonDisplayableException : public std::exception
 		{
-			const char* what() const noexcept override
-			{
-				return "Non displayable";
-			}
+			const char* what() const noexcept override;
 		};
 	
 		class	ImpossibleException : public std::exception
 		{
-			const char* what() const noexcept override
-			{
-				return "Impossible";
-			}
+			const char* what() const noexcept override;
 		};
 };
 
