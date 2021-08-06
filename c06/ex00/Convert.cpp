@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 08:38:32 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/06 09:34:38 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/06 09:35:21 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Convert::Convert(std::string input)
 {
 	this->input = input;
 	this->value = atof(input.c_str());
-	std::cout << value << std::endl;
+	std::cout << input << std::endl;
 }
 
 Convert::~Convert()
