@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 08:38:32 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/06 10:02:21 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/06 10:55:49 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ Convert& Convert::operator=(const Convert &p)
 	return (*this);
 }
 
-std::string	const & Convert::getInput(void) const
+double	const & Convert::getValue(void) const
 {
-	return (this->input);
+	return (value);
 }
 
 char	Convert::convertChar() const
@@ -56,9 +56,9 @@ int	Convert::convertInt() const
 {
 	int	Int;
 
-	Int = static_cast<int>(this->value);
-	if (isnan(this->value) || isinf(this->value))
+	if (this->value > INT_MAX || this->value < INT_MIN || isnan(this->value) || isinf(this->value))
 		throw	ImpossibleException();
+	Int = static_cast<int>(this->value);
 	return (Int);
 }
 
@@ -67,13 +67,23 @@ float	Convert::convertFloat() const
 	float	Float;
 
 	Float = static_cast<float>(this->value);
-	if (isnan(this->value) || isinf(this->value))
-		throw	ImpossibleException();
 	return (Float);
 }
 
+double	Convert::convertDouble() const
+{
+	double	Double;
+
+	Double = static_cast<float>(this->value);
+	return (Double);
+}
+
+
 std::ostream& operator<<(std::ostream& stream, const Convert& p)
 {
+	float	floatValue = p.getValue();
+	int	intValue = static_cast<int>(floatValue);
+
 	stream << "char: ";
 	try
 	{
@@ -101,7 +111,24 @@ std::ostream& operator<<(std::ostream& stream, const Convert& p)
 	try
 	{
 		stream << p.convertFloat();
-		stream << "f";
+		if (floatValue - intValue != 0)
+			stream << "f";
+		else
+			stream << ".0f";
+	}
+	catch (std::exception &e)
+	{
+		stream << e.what();
+	}
+
+
+	stream << std::endl;
+	stream << "Double: ";
+	try
+	{
+		stream << p.convertDouble();
+		if (floatValue - intValue == 0)
+			stream << ".0";
 	}
 	catch (std::exception &e)
 	{

@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 08:38:34 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/06 10:01:36 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/06 10:51:05 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 #include <iostream>
 #include <exception>
 #include <math.h>
-
+#define	INT_MIN	-2147483648
+#define INT_MAX 2147483647
 class Convert
 {
 	private:
@@ -32,8 +33,9 @@ class Convert
 		char	convertChar() const;
 		int	convertInt() const;
 		float	convertFloat() const;
+		double	convertDouble() const;
 
-		std::string	const & getInput(void) const;
+		double	const & getValue(void) const;
 
 		class	NonDisplayableException : public std::exception
 		{
