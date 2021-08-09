@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 13:56:46 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/06 14:33:11 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/09 08:15:07 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,47 @@ Base	*generate(void)
 
 void	identify(Base* p)
 {
-	Base*	generic;
-
-	generic = static_cast<Base*>(p);
-	std::cout << typeid(generic).name() << std::endl;
-	std::cout << p << std::endl;
+	std::cout << "   Pointer: ";
+	if (dynamic_cast<A*>(p))
+		std::cout << "Class A" << std::endl;
+	else if (dynamic_cast<B*>(p))
+		std::cout << "Class B" << std::endl;
+	else if (dynamic_cast<C*>(p))
+		std::cout << "Class C" << std::endl;
 }
 
-/*
 void	identify(Base& p)
 {
-	
-}
+	std::cout << "No pointer: ";
 
-*/
+	try
+	{
+		A& a = dynamic_cast<A&>(p);
+		(void) a;
+		std::cout << "Class A" << std::endl;
+	}
+	catch (std::exception& e)
+	{
+	}
+	try
+	{
+		B& b = dynamic_cast<B&>(p);
+		(void) b;
+		std::cout << "Class B" << std::endl;
+	}
+	catch (std::exception& e)
+	{
+	}
+	try
+	{
+		C& c = dynamic_cast<C&>(p);
+		(void) c;
+		std::cout << "Class C" << std::endl;
+	}
+	catch (std::exception& e)
+	{
+	}
+}
 
 int	main(void)
 {
@@ -52,4 +79,5 @@ int	main(void)
 
 	rand = generate();
 	identify(rand);
+	identify(*rand);
 }

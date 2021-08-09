@@ -6,7 +6,7 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/06 13:56:23 by maraurel          #+#    #+#              #
-#    Updated: 2021/08/06 14:21:47 by maraurel         ###   ########.fr        #
+#    Updated: 2021/08/09 07:52:42 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,10 @@ CC = clang++
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS = main.cpp \
-	Base.cpp
+	Base.cpp \
+	a.cpp \
+	b.cpp \
+	c.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
