@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 08:29:47 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/09 09:57:26 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/09 09:59:42 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ template <typename T>
 
 void	swap(T &a, T &b)
 {
-	T	c = 0;
+	T	c;
 	
 	c = a;
 	a = b;

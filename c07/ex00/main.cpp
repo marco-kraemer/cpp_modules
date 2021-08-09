@@ -6,31 +6,25 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 08:29:36 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/09 09:57:10 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/09 09:58:36 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "whatever.hpp"
 
-int	main(void)
+int main( void )
 {
-	std::cout << "\nSwap INT" << std::endl;
-	int a = 5;
-	int b = 8;
-	std::cout << "A: " << a << "  B: " << b << std::endl;
-	swap<int>(a, b);
-	std::cout << "A: " << a << "  B: " << b << std::endl;
-
-	std::cout << "\nSwap CHAR" << std::endl;
-	char c = 'c';
-	char d = 'd';
-	std::cout << "C: " << c << "  D: " << d << std::endl;
-	swap<char>(c, d);
-	std::cout << "C: " << c << "  D: " << d << std::endl;
-
-	std::cout << "\nMIN/MAX tests" << std::endl;
-	std::cout << "Min value int  (a, b): " << min<int>(a, b) << std::endl;
-	std::cout << "Min value char (c, d): " << min<char>(c, d) << std::endl;
-	std::cout << "Max value int  (a, b): " << max<int>(a, b) << std::endl;
-	std::cout << "Max value char (c, d): " << max<char>(c, d) << std::endl;
+	int a = 2;
+	int b = 3;
+	::swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+	::swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+	return 0;
 }
