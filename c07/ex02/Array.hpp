@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 10:37:07 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/09 12:19:50 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/09 14:03:55 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,8 @@ class Array
 };
 
 template <typename T>
-Array<T>::Array()
+Array<T>::Array() : array(nullptr)
 {
-	array(nullptr);
 	length = 0;
 }
 
@@ -59,16 +58,25 @@ Array<T>::~Array()
 }
 
 template <typename T>
-Array<T>::Array(const Array &p)
+Array<T>::Array(const Array &p) : array(nullptr), length(0)
 {
-	*this = p;
+	this->array = new T[p.length];
+	for (unsigned int i = 0; i < p.length; i++)
+	{
+		this->array[i] = p.array[i];
+	}
+	this->length = p.length;
 }
 
 template <typename T>
 Array<T>&	Array<T>::operator=(const Array &p)
 {
-	for (int i = 0; p.array[i]; i++)
+	this->array = new T[p.length];
+	for (unsigned int i = 0; i < p.length; i++)
+	{
 		this->array[i] = p.array[i];
+	}
+	this->length = p.length;
 	return (*this);
 }
 
