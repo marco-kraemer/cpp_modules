@@ -6,7 +6,7 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/10 11:25:08 by maraurel          #+#    #+#              #
-#    Updated: 2021/08/10 13:57:33 by maraurel         ###   ########.fr        #
+#    Updated: 2021/08/10 14:01:48 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = mutantstack.cpp \
-	main.cpp
+SRCS = main.cpp \
+	mutantstack.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
