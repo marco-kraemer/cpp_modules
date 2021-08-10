@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 11:25:14 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/10 12:14:34 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/10 12:31:00 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,26 @@ MutantStack<T>&	MutantStack<T>::operator=(const MutantStack &p)
 
 template <typename T>
 void	MutantStack<T>::push(type element)
-{}
+{
+	this->vec.push_back(element);
+}
 
 template <typename T>
-void	MutantStack<T>::pop(type element)
-{}
+void	MutantStack<T>::pop()
+{
+	this->vec.pop_back(element);
+}
 
 template <typename T>
 void	MutantStack<T>::top()
-{}
+{
+}
 
 template <typename T>
-void	MutantStack<T>::size()
-{}
+int	MutantStack<T>::size()
+{
+	return (this->vec.size());
+}
 
 template <typename T>
 void	MutantStack<T>::end()

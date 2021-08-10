@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 11:25:18 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/10 12:20:34 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/10 12:29:55 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ class MutantStack
 		typedef typename std::vector<T>::iterator iterator;
 
 		void	push(type element);
-		void	pop(type element);
+		void	pop();
 		void	top();
-		void	size();
+		int	size();
 		void	end();
 		void	begin();
 };
