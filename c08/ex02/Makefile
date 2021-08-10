@@ -6,18 +6,18 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/10 11:25:08 by maraurel          #+#    #+#              #
-#    Updated: 2021/08/10 11:25:10 by maraurel         ###   ########.fr        #
+#    Updated: 2021/08/10 13:57:33 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Span
+NAME = Stack
 
 CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = main.cpp \
-	span.cpp
+SRCS = mutantstack.cpp \
+	main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 11:25:14 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/10 12:31:00 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/10 13:55:26 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,13 @@ void	MutantStack<T>::push(type element)
 template <typename T>
 void	MutantStack<T>::pop()
 {
-	this->vec.pop_back(element);
+	this->vec.pop_back();
 }
 
 template <typename T>
-void	MutantStack<T>::top()
+T&	MutantStack<T>::top()
 {
+	return (this->vec.back());
 }
 
 template <typename T>
@@ -59,9 +60,13 @@ int	MutantStack<T>::size()
 }
 
 template <typename T>
-void	MutantStack<T>::end()
-{}
+typename MutantStack<T>::iterator	MutantStack<T>::end()
+{
+	return (this->vec.end());
+}
 
 template <typename T>
-void	MutantStack<T>::begin()
-{}
+typename MutantStack<T>::iterator	MutantStack<T>::begin()
+{
+	return (this->vec.begin());
+}

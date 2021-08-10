@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 11:25:18 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/10 12:29:55 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/10 13:52:25 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ class MutantStack
 
 		void	push(type element);
 		void	pop();
-		void	top();
+		T&	top();
 		int	size();
-		void	end();
-		void	begin();
+		iterator	end();
+		iterator	begin();
 };
 
 #endif

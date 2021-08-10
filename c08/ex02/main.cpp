@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 11:25:01 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/10 12:22:45 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/08/10 13:56:33 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ int main()
 		std::cout << *it << std::endl;
 		++it;
 	}
-	std::stack<int> s(mstack);
+//	std::stack<int> s(mstack);
 	return 0;
 }
