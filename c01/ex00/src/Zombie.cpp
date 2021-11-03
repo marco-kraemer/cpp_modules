@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 08:47:37 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/20 09:27:46 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/11/03 11:55:36 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ void	Zombie::announce( void )
 Zombie::Zombie () {}
 
 Zombie::Zombie (std::string name)
-{this->name = name;}
+{
+	this->name = name;
+}
 
 Zombie::~Zombie()
-{std::cout << "Zombie killed!" << std::endl;}
+{std::cout << "Zombie " << name << " killed!" << std::endl;}

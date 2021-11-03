@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 08:47:31 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/20 09:26:57 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/11/03 12:01:45 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void	randomChump( std::string name )
 {
-	Zombie zombie;
+	Zombie zombie(name);
 
-	zombie = Zombie(name);
 	zombie.announce();
 }

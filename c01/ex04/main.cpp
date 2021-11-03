@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 19:12:03 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/27 17:01:13 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/11/03 12:33:53 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 int main(int argc, char *argv[])
 {
-	// argv[0] == FILENAME, argv[1] == s1, argv[2] == s2
 	if (argc != 4)
 	{
 		std::cout << "Wrong number of arguments" << std::endl;
@@ -42,14 +41,37 @@ int main(int argc, char *argv[])
 	std::string	newFileName = argv[1] + toReplace;
 	replace.open (newFileName, std::ios::out | std::ios::app | std::ios::binary);
 
-	// extracting words from the file
-	while (file >> word)
+	// Replacing
+	char		c;
+	unsigned long	i;
+	std::string 	str1;
+	std::string 	str2;
+	std::string	tmp;
+
+	str1.assign(argv[2]);
+	str2.assign(argv[3]);
+	i = 0;
+	while (file.get(c))
 	{
-		// displaying content
-		if (word != argv[2])
-			replace << word << " ";
+		if (c == str1[i])
+		{
+			tmp.append(1, c);
+			while (i < str1.length() - 1)
+			{
+				file.get(c);
+				tmp.append(1, c);
+				i++;
+			}
+			i = 0;
+			if (!str1.compare(tmp))
+				replace << str2;
+			else
+				replace << tmp;
+			tmp.clear();
+		}
 		else
-			replace << argv[3] << " ";
+			replace << c;
+		
 	}
 	return (0);
 }
