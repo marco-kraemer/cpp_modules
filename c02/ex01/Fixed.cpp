@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 09:41:47 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/30 14:53:38 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/06 12:50:41 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/06 12:55:05 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,6 @@ float	Fixed::toFloat( void ) const
 
 std::ostream& operator<<(std::ostream& stream, const Fixed& num)
 {
-	stream << num.toFloat();
-	return stream;
+ 	stream << num.toFloat();
+ 	return stream;
 }

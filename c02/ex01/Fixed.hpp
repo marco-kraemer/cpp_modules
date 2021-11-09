@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 09:41:55 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/30 14:52:58 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/06 12:50:32 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/06 13:03:18 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ public:
 	Fixed(); // Constructor
 	Fixed(const int num); // Constructor
 	Fixed(const float num); // Constructor
-	Fixed(const Fixed &fix); // Copy constructor;  ClassName (const ClassName &old_obj)
+	Fixed(const Fixed &fix); // Copy constructor;
 	~Fixed(); // Destructor
-	Fixed&	operator = (const Fixed &fix); // Assigment operator; ClassName& operator = (const ClassName &old_obj)
+	Fixed&	operator = (const Fixed &fix); // Assigment operator;
 	
 	int	getRawBits( void ) const;
 	void	setRawBits( int const raw );

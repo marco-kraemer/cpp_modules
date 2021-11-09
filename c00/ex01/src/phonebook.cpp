@@ -5,12 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/16 14:30:58 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/19 11:09:25 by maraurel         ###   ########.fr       */
+/*   Created: 2021/10/28 13:07:57 by maraurel          #+#    #+#             */
+/*   Updated: 2021/10/28 13:08:02 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/phonebook.hpp"
+
+Contact::Contact()
+{}
+
+Contact::~Contact()
+{}
 
 std::string	Contact::get_first_name()
 {return (first_name);}

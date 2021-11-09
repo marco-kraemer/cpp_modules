@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 11:09:12 by maraurel          #+#    #+#             */
-/*   Updated: 2021/07/19 11:19:42 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/10/28 12:56:15 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ class Contact
 		void	set_phone_number(std::string number, Contact *contact);
 		void	set_darkest_secret(std::string secret, Contact *contact);
 
-	//	Contact(void);	
-	//	~Contact(void);
+		Contact(void);	
+		~Contact(void);
 };
 
 #endif

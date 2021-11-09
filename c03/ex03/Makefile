@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/07/30 09:42:09 by maraurel          #+#    #+#              #
-#    Updated: 2021/08/02 11:50:01 by maraurel         ###   ########.fr        #
+#    Created: 2021/11/09 12:02:24 by maraurel          #+#    #+#              #
+#    Updated: 2021/11/09 12:02:28 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = DiamondTrap
 
 CC = clang++
 
-CFLAGS = #-Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS = main.cpp \
 	ClapTrap.cpp \
