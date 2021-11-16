@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/03 08:23:39 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/03 09:23:36 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/16 10:26:51 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/16 10:33:35 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound(); //will output the cat sound!
-	j->makeSound();
+	j->makeSound(); //will output the dog sound!
 	meta->makeSound();
 
 	const WrongAnimal* a = new WrongCat();

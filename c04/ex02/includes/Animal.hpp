@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/03 08:34:43 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/03 14:25:54 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/16 10:36:45 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/16 12:00:48 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ class Animal
 		Animal& operator=(const Animal &p);
 		
 		std::string const & getType(void) const;
-		virtual void		makeSound() const = 0; //  Class is abstract if it has at least one pure virtual function. 
+		virtual void		makeSound() const = 0;
+		//  Class is abstract if it has at least one pure virtual function. 
 };
 
 #endif

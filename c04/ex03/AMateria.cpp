@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 08:32:23 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/04 11:00:10 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/16 12:08:47 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/16 12:59:00 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ AMateria::AMateria(std::string const & type)
 }
 
 AMateria::~AMateria()
-{}
+{
+}
 
 AMateria::AMateria(const AMateria &p)
 {

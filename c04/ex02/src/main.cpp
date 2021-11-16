@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/03 08:23:39 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/03 14:26:08 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/16 10:36:19 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/16 12:08:16 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int main()
 {
 	Animal	*animals[20];
 
+	// const Animal* meta = new Animal();
+	
 	// Create animals
 	for (int i = 0; i < 20; i++)
 	{
@@ -30,7 +32,9 @@ int main()
 		((Dog *)animals[1])->getBrain()->setIdea("a", i);
 
 	// Create deep copy
-	Animal *CopyDog = new Dog (*(Dog *)animals[1]);
+	Animal *CopyDog;
+	
+	CopyDog = new Dog (*(Dog *)animals[1]);
 	
 	// Show ideas;
 	std::cout << "\n\nShow ideas from animals[1] and CopyDog: " << std::endl;
@@ -53,4 +57,5 @@ int main()
 	{
 		delete animals[i];
 	}
+	delete CopyDog;
 }

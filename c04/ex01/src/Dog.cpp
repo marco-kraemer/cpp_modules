@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/03 08:28:59 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/03 08:39:52 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/16 10:36:09 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/16 11:39:12 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,8 @@ Dog::~Dog()
 
 Dog& Dog::operator=(const Dog &p)
 {
-	this->~Dog();
-	this->brain = new Brain(*p.getBrain());
-	Animal::operator=(p);
+	this->type = p.type;
+	this->brain = new Brain(*p.brain);
 	return (*this);
 }
 

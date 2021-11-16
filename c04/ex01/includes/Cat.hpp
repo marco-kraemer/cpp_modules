@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/03 08:34:28 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/03 12:52:44 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/16 10:36:57 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/16 10:53:50 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ class Cat : public Animal
 		Cat(const Cat &p);
 		Cat& operator=(const Cat &p);
 		virtual void		makeSound() const;
+
+		Brain* getBrain(void) const;
 };
 
 #endif

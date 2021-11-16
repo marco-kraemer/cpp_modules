@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/08/04 08:32:31 by maraurel          #+#    #+#              #
-#    Updated: 2021/08/04 10:59:56 by maraurel         ###   ########.fr        #
+#    Created: 2021/11/16 12:11:11 by maraurel          #+#    #+#              #
+#    Updated: 2021/11/16 12:27:46 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Materia
+NAME = a.out
 
 CC = clang++
 
-CFLAGS = #-Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS = main.cpp \
 	Character.cpp \

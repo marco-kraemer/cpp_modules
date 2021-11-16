@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.cpp                                     :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 08:47:43 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/04 09:32:43 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/16 12:09:02 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/16 13:17:04 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,9 @@ void Character::use(int idx, ICharacter& target)
 	if (idx >= 0 && idx <= 3 && invent[idx] != NULL)
 	{
 		invent[idx]->use(target);
+	}
+	else
+	{
+		std::cout << this->name << ": you need to learn this skill first!" << std::endl;
 	}
 }

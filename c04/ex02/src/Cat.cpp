@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/03 08:28:59 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/03 08:39:52 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/16 10:36:03 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/16 11:36:48 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ Cat::~Cat()
 
 Cat& Cat::operator=(const Cat &p)
 {
-	Animal::operator=(p);
+	this->type = p.type;
+	this->brain = new Brain(*p.brain);
 	return (*this);
 }
 
@@ -37,4 +38,9 @@ Cat::Cat(const Cat &p)
 void		Cat::makeSound(void) const
 {
 	std::cout << "Miau!" << std::endl;
+}
+
+Brain*	Cat::getBrain(void) const
+{
+	return (brain);
 }

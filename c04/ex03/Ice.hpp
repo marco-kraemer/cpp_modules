@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 10:06:44 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/04 10:21:14 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/16 12:10:41 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/16 12:57:47 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class Ice : public AMateria
 {
 	public:
 		Ice();
-		virtual ~Ice();
+		~Ice();
 		Ice(const Ice &p);
 		Ice& operator=(const Ice &p);
 

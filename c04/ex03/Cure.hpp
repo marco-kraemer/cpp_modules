@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 10:25:14 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/04 10:25:46 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/16 12:10:31 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/16 12:57:41 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class Cure : public AMateria
 {
 	public:
 		Cure();
-		virtual ~Cure();
+		~Cure();
 		Cure(const Cure &p);
 		Cure& operator=(const Cure &p);
 

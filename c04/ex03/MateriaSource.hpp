@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 09:15:23 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/04 09:45:04 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/16 12:11:22 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/16 12:42:43 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class MateriaSource : public IMateriaSource
 		AMateria	*Source[4];
 	public:
 		MateriaSource();
-		~MateriaSource();
+		virtual ~MateriaSource();
 		MateriaSource(const MateriaSource &p);
 		MateriaSource& operator=(const MateriaSource &p);
 
