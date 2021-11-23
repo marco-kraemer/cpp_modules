@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 14:32:16 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/05 14:26:54 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/23 12:41:14 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/23 12:51:19 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,10 @@ int	main(void)
 		Intern	someRandomIntern;
 		Form 	*myForm;
 
-
 		Bureaucrat		one("Tom" , 20);
-		myForm = someRandomIntern.makeForm("shrubbery creation", "Bender");
+//		myForm = someRandomIntern.makeForm("shrubbery creation", "Bender");
 //		myForm = someRandomIntern.makeForm("presidential pardon", "Bender");
-//		myForm = someRandomIntern.makeForm("robotomy request", "Bender");
+		myForm = someRandomIntern.makeForm("robotomy request", "Bender");
 
 
 		std::cout << "\n\n" << myForm->getName() << " Example: \n" << std::endl; 

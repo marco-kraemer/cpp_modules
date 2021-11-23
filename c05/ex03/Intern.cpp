@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/05 13:49:39 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/05 14:23:06 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/23 12:41:03 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/23 12:47:48 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,17 @@ Intern::Intern(const Intern &p)
 	*this = p;
 }
 
-Form*	Intern::makePresidential(std::string target)
+Form*	makePresidential(std::string target)
 {
 	return new PresidentialPardonForm(target);
 }
 
-Form*	Intern::makeShrubbery(std::string target)
+Form*	makeShrubbery(std::string target)
 {
 	return new ShrubberyCreationForm(target);
 }
 
-Form*	Intern::makeRobotomy(std::string target)
+Form*	makeRobotomy(std::string target)
 {
 	return new RobotomyRequestForm(target);
 }
@@ -47,11 +47,11 @@ Form*	Intern::makeRobotomy(std::string target)
 Form	*Intern::makeForm(std::string name, std::string target)
 {
 	std::string	formNames[3] = {"robotomy request", "presidential pardon", "shrubbery creation"};
-	Form*	(Intern::*function[3])(std::string target) =
+	Form*	(*function[3])(std::string target) =
 	{
-		&Intern::makeRobotomy,
-		&Intern::makePresidential,
-		&Intern::makeShrubbery
+		&makeRobotomy,
+		&makePresidential,
+		&makeShrubbery
 	};
 
 	Form	*form = NULL;
@@ -59,7 +59,7 @@ Form	*Intern::makeForm(std::string name, std::string target)
 	{
 		if (name.compare(formNames[i]) == 0)
 		{
-			form = (this->*function[i])(target);
+			form = (*function[i])(target);
 			std::cout << "Intern creates " << form->getName() << std::endl;
 			return (form);
 		}

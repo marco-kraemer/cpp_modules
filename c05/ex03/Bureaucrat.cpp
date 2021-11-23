@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 13:53:27 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/05 13:40:41 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/23 12:39:10 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/23 12:39:11 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 {
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	else if (grade < 0)
+	else if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	this->name = name;
 	this->grade = grade;

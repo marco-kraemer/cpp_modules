@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/05 13:49:41 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/05 14:13:22 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/23 12:41:08 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/23 12:46:11 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,6 @@ class Intern
 		Intern(const Intern &p);
 		Intern& operator=(const Intern &p);
 
-		Form	*makePresidential(std::string target);
-		Form	*makeRobotomy(std::string target);
-		Form	*makeShrubbery(std::string target);
 		Form	*makeForm(std::string name, std::string target);
 
 		class	WrongFormNameException : public std::exception

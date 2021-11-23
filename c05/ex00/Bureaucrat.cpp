@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 13:53:27 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/04 15:19:54 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/23 12:06:36 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/23 12:10:46 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 {
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	else if (grade < 0)
+	else if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	this->name = name;
 	this->grade = grade;
@@ -52,7 +52,7 @@ std::string	const & Bureaucrat::getName(void)const
 
 void	Bureaucrat::incrementGrade(int amount)
 {
-	if (this->grade - amount < 0)
+	if (this->grade - amount < 1)
 		throw Bureaucrat::GradeTooHighException();
 	this->grade -= amount;
 }

@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/08/04 14:40:28 by maraurel          #+#    #+#              #
-#    Updated: 2021/08/04 15:14:01 by maraurel         ###   ########.fr        #
+#    Created: 2021/11/23 12:07:08 by maraurel          #+#    #+#              #
+#    Updated: 2021/11/23 12:41:32 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = Bureaucrat
 
 CC = clang++
 
-CFLAGS = #-Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS = main.cpp \
 	Bureaucrat.cpp
