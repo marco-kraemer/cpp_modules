@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/06 12:00:16 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/06 12:23:26 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/30 11:12:12 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/30 11:26:02 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ Data*		deserialize(uintptr_t raw)
 int	main(void)
 {
 	uintptr_t	serialized;
+	Data	*data = new Data;
 
 	{
-		Data	*data = new Data;
 		data->string1 = "teste";
 		data->string2 = "42";
 		data->Value1 = 21;
@@ -57,4 +57,5 @@ int	main(void)
 		std::cout << data2->Value1 << std::endl;
 		std::cout << data2->Value2 << std::endl;
 	}
+	delete data;
 }

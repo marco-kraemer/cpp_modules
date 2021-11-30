@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/06 13:56:46 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/09 08:15:07 by maraurel         ###   ########.fr       */
+/*   Created: 2021/11/30 11:24:45 by maraurel          #+#    #+#             */
+/*   Updated: 2021/11/30 11:30:23 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,5 @@ int	main(void)
 	rand = generate();
 	identify(rand);
 	identify(*rand);
+	delete rand;
 }
