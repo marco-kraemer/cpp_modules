@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/09 10:37:07 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/09 14:03:55 by maraurel         ###   ########.fr       */
+/*   Created: 2021/12/05 23:03:16 by coder             #+#    #+#             */
+/*   Updated: 2021/12/05 23:04:59 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Array
 		~Array();
 		Array(const Array &p);
 		Array& operator=(const Array &p);
+
 		T& operator[](unsigned int i);
 		unsigned int	size();
 
