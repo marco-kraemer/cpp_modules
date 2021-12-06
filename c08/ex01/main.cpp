@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/10 09:37:16 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/10 10:32:02 by maraurel         ###   ########.fr       */
+/*   Created: 2021/12/06 11:07:17 by maraurel          #+#    #+#             */
+/*   Updated: 2021/12/06 11:17:21 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,14 @@ int main()
 		}
 		std::cout << sp3.shortestSpan() << std::endl;
 		std::cout << sp3.longestSpan() << std::endl;
+		
 		std::cout << "\nAssignation test:\n" << std::endl;
 		Span sp4 = sp;
 		std::cout << sp4.shortestSpan() << std::endl;
 		std::cout << sp4.longestSpan() << std::endl;
+
+		std::cout << "\nTesting capacity\n" << std::endl;
+		sp4.addNumber(100);
 	}
 	catch (std::exception& e)
 	{

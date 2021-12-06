@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/10 07:59:51 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/10 08:57:16 by maraurel         ###   ########.fr       */
+/*   Created: 2021/12/06 10:47:58 by maraurel          #+#    #+#             */
+/*   Updated: 2021/12/06 11:05:46 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(void)
 	vs = {1, 2, 3, 4, 5, 100};
 	try
 	{
-		easyfind(vs, 100);
+		easyfind(vs, 3);
 	}
 	catch (std::exception& e)
 	{

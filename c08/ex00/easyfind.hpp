@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/10 07:59:45 by maraurel          #+#    #+#             */
-/*   Updated: 2021/08/10 08:53:27 by maraurel         ###   ########.fr       */
+/*   Created: 2021/12/06 10:55:35 by maraurel          #+#    #+#             */
+/*   Updated: 2021/12/06 11:06:23 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define	EASYFIND_HPP
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 class	notFoundException : public std::exception
 {
@@ -26,13 +27,10 @@ class	notFoundException : public std::exception
 template <typename T>
 void	easyfind(T a, int b)
 {
-	for (const auto &s : a)
+	if (std::find(a.begin(), a.end(), b) != a.end())
 	{
-		if (s == b)
-		{
-			std::cout << "Found!" << std::endl;
-			return ;
-		}
+		std::cout << "Found!" << std::endl;
+		return ;
 	}
 	throw notFoundException();
 }
