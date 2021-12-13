@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:08:24 by maraurel          #+#    #+#             */
-/*   Updated: 2021/12/06 11:08:33 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/12/13 11:50:38 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define	SPAN_HPP
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 class Span
 {
@@ -31,6 +32,17 @@ class Span
 		int	shortestSpan();
 		int	longestSpan();
 
+		template <class Iterator>
+		void	addNumber(Iterator begin, Iterator end)
+		{
+			if (end - begin <= size)
+				std::copy(begin, end, std::back_inserter(this->vs));
+			else
+			{
+				throw(limitException());
+			}
+		}
+	
 		class	limitException : public std::exception
 		{
 			const char* what() const noexcept override

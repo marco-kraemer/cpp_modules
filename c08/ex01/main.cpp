@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:07:17 by maraurel          #+#    #+#             */
-/*   Updated: 2021/12/06 11:17:21 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/12/13 11:53:14 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,13 @@ int main()
 		std::cout << sp2.longestSpan() << std::endl;
 	
 		std::cout << "\n15000 numbers test:\n" << std::endl;
-		Span sp3 = Span(15000);
-		srand(time(NULL));
-		for (int i = 0; i < 15000; i++)
-		{
-			int ran = rand();
-			sp3.addNumber(ran);
-		}
+    		Span sp3 = Span(15000);
+		std::vector<int> range(15000, 10);
+		range[5000] = 150;
+		sp3.addNumber(range.begin(), range.end());
 		std::cout << sp3.shortestSpan() << std::endl;
 		std::cout << sp3.longestSpan() << std::endl;
+
 		
 		std::cout << "\nAssignation test:\n" << std::endl;
 		Span sp4 = sp;

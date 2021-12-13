@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 10:47:58 by maraurel          #+#    #+#             */
-/*   Updated: 2021/12/06 11:05:46 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/12/13 11:33:42 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int	main(void)
 	vs = {1, 2, 3, 4, 5, 100};
 	try
 	{
-		easyfind(vs, 3);
+		  std::vector<int>::iterator it = easyfind(vs, 5);
+		  std::cout << "First occurrence in position " << *it - 1 << std::endl;
 	}
 	catch (std::exception& e)
 	{

@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 10:55:35 by maraurel          #+#    #+#             */
-/*   Updated: 2021/12/06 11:06:23 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/12/13 11:31:52 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ class	notFoundException : public std::exception
 	}
 };
 
-template <typename T>
-void	easyfind(T a, int b)
+template < template < typename , typename> class T>
+typename T<int, std::allocator<int> >::iterator	easyfind(T<int, std::allocator<int> > &a, int b)
 {
-	if (std::find(a.begin(), a.end(), b) != a.end())
+	 typename T<int, std::allocator<int> >::iterator it;
+	if ((it = std::find(a.begin(), a.end(), b)) != a.end())
 	{
-		std::cout << "Found!" << std::endl;
-		return ;
+		return (it);
 	}
 	throw notFoundException();
 }
